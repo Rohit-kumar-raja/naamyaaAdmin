@@ -6,7 +6,7 @@ $msg = "";
 $row = "";
 include '../../AdminLogin/function.inc.php';
 include '../../connection.inc.php';
-
+// i have changed something 
 if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
     $id = $_GET['edit'];
 

@@ -176,7 +176,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./pages/about/about.php" class="nav-link">
+                            <a href="./pages/about/mission.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Mission
                                 </p>
@@ -186,7 +186,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./pages/about/about.php" class="nav-link">
+                            <a href="./pages/about/vission.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Vission
                                 </p>

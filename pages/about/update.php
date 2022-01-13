@@ -53,12 +53,12 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                 </button>
               </div>';
 
-                echo "<script>
-                setTimeout(function() {
-                  window.location.replace('$url');
-                  }, 2000);
+            //     echo "<script>
+            //     setTimeout(function() {
+            //       window.location.replace('$url');
+            //       }, 2000);
         
-            </script>";
+            // </script>";
             } else {
                 echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <strong>Alert!</strong>  ' . $connection->error . '

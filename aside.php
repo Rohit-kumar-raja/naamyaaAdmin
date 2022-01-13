@@ -155,7 +155,57 @@
                     </ul>
 
                 </li>
-              
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-bullhorn"> </i>
+                        <p>
+                            &nbsp; Our Organization
+
+                            <i class="fas fa-angle-left right"></i>
+
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./pages/about/about.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>About us</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./pages/about/mission.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Mission
+                                </p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./pages/about/vission.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Vission
+                                </p>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./pages/about/doantion.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Donation
+                                </p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>

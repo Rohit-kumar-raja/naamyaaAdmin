@@ -86,7 +86,6 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           <th>Email</th>
                           <th>Mobile</th>
                           <th>Address</th>
-
                           <th>Date/Time</th>
                           <th>Details</th>
                           <th>Status</th>
@@ -95,11 +94,10 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       </thead>
 
                       <tbody>
-
                         <?php
                         $i = 1;
                         while ($rows = mysqli_fetch_array($result_team_member)) {
-
+                          // something adding new
                         ?>
                           <tr>
                             <td><?php echo $i++; ?></td>

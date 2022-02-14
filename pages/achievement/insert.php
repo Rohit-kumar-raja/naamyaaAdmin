@@ -31,7 +31,7 @@ if (isset($_POST['add'])) {
 
         echo "<p class='success'>Event Added successfully Refresh the page</p>";
     } else {
-        echo "<p class='col'>data already exits</p>";
+        echo "<p class='col'>$connection->error</p>";
     }
 
     // } else {

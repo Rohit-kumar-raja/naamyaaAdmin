@@ -113,19 +113,32 @@
                         </p>
                         <i class="right fas fa-angle-left"></i>
                     </a>
+
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="../user-master/user.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>volunteer</p>
-                            </a>
-                        </li>
+
+
                         <li class="nav-item">
                             <a href="../keypepole/pepole.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>key Pepole</p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="../team_member/user.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Team Member</p>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="../user-master/user.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>volunteer</p>
+                            </a>
+                        </li>
+
 
                     </ul>
 
@@ -172,7 +185,7 @@
                     </ul>
                 </li>
 
-        
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-bullhorn"> </i>

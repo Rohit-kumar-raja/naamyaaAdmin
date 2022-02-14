@@ -110,7 +110,16 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./pages/keypepole/people.php" class="nav-link">
+                            <a href="./pages/team_member/user.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Team Member</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./pages/keypepole/pepole.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Key People</p>
                             </a>

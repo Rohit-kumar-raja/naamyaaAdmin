@@ -72,6 +72,7 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 ?>
 
 
+
         <!doctype html>
         <html lang="en">
 
@@ -155,7 +156,7 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                                     </div>
                                     <div class="mb-3 col-md-12">
                                         <label for="exampleInputEmail1" class="form-label"> Description</label>
-                                        <textarea type="text" cols="10" rows="10" name="desc" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><?php echo $description; ?></textarea>
+                                        <textarea type="text" cols="10" rows="10" name="desc" class="form-control ckeditor" id="exampleInputEmail1" aria-describedby="emailHelp"><?php echo $description; ?></textarea>
                                     </div>
 
 
@@ -182,6 +183,8 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                     <script src="../../dist/js/adminlte.min.js"></script>
                     <!-- AdminLTE for demo purposes -->
                     <script src="../../dist/js/demo.js"></script>
+                    <script src="../../ckeditor/ckeditor.js"></script>
+
                     <!-- page script -->
                     <script>
                         $(function() {

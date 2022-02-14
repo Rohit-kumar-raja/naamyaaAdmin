@@ -118,8 +118,8 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                   <div class="mb-3 col-sm-12">
 
 
-                    <label for="exampleInputEmail1" class="form-label">Description</label>
-                    <textarea name="desc" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> <?php echo $desc ?> </textarea>
+                    <label for="exampleInputEmail1" class="form-label ">Description</label>
+                    <textarea name="desc" class="form-control ckeditor" id="exampleInputEmail1" aria-describedby="emailHelp"> <?php echo $desc ?> </textarea>
 
                   </div>
                   <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>

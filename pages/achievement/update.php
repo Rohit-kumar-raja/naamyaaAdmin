@@ -72,76 +72,81 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 ?>
 
 
-        <!doctype html>
-        <html lang="en">
+<!doctype html>
+<html lang="en">
 
-        <?php
-        // here added the comman update link
-        include '../../pages/navfootersider/updatenav.php'; ?>
-        <div class="card p-4">
+<?php
+// here added the comman update link
+include '../../pages/navfootersider/updatenav.php'; ?>
+<div class="card p-4">
 
-            <form method="post" enctype="multipart/form-data">
-                <div class="container">
-                    <div class="row">
+    <form method="post" enctype="multipart/form-data">
+        <div class="container">
+            <div class="row">
 
-                        <div class="col-sm-4 form-group">
-
-
-                            <label for="exampleInputEmail1" class="form-label">name</label>
-                            <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                        </div>
-                        <div class="col-sm-4 form-group">
+                <div class="col-sm-4 form-group">
 
 
-                            <label for="exampleInputEmail1" class="form-label">link</label>
-                            <input type="text" name="link" value="<?php echo $link; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1" class="form-label">name</label>
+                    <input type="text" name="name" value="<?php echo $name; ?>" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
 
-                        </div>
-                        <div class="col-sm-4 form-group">
-
-
-                            <label for="exampleInputEmail1" class="form-label">date</label>
-                            <input type="date" name="date" value="<?php echo $date; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                        </div>
-                        <div class="col-sm-4 form-group">
-
-
-                            <label for="exampleInputEmail1" class="form-label">Image</label>
-                            <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                        </div>
-                        <div class="form-group col-sm-4">
-                            <label for="exampleFormControlSelect1">Select Status</label>
-                            <select name="status" class="form-control" id="exampleFormControlSelect1">
-
-                                <option value='1'>Active</option>
-                                <option value='0'>DeActive</option>
-
-                            </select>
-                        </div>
-                        <div class="col-sm-12 form-group">
-
-
-                            <label for="exampleInputEmail1" class="form-label">description</label>
-                            <textarea cols="10" rows="6" type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <?php echo $description; ?> </textarea>
-                        </div>
-
-
-
-                    </div>
                 </div>
-                <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>
-                <h3><?php echo $msg; ?></h3>
-            </form>
+                <div class="col-sm-4 form-group">
 
+
+                    <label for="exampleInputEmail1" class="form-label">link</label>
+                    <input type="text" name="link" value="<?php echo $link; ?>" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                </div>
+                <div class="col-sm-4 form-group">
+
+
+                    <label for="exampleInputEmail1" class="form-label">date</label>
+                    <input type="date" name="date" value="<?php echo $date; ?>" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                </div>
+                <div class="col-sm-4 form-group">
+
+
+                    <label for="exampleInputEmail1" class="form-label">Image</label>
+                    <input type="file" name="image" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="exampleFormControlSelect1">Select Status</label>
+                    <select name="status" class="form-control" id="exampleFormControlSelect1">
+
+                        <option value='1'>Active</option>
+                        <option value='0'>DeActive</option>
+
+                    </select>
+                </div>
+                <div class="col-sm-12 form-group">
+
+
+                    <label for="exampleInputEmail1" class="form-label">description</label>
+                    <textarea cols="10" rows="6" type="text" name="description" class="form-control ckeditor"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <?php echo $description; ?> </textarea>
+                </div>
+
+
+
+            </div>
         </div>
-        <?php include '../../pages/navfootersider/foot.php'; ?>
-        </body>
+        <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>
+        <h3><?php echo $msg; ?></h3>
+    </form>
 
-        </html>
+</div>
+<?php include '../../pages/navfootersider/foot.php'; ?>
+</body>
+
+</html>
 <?php
 
     } else {

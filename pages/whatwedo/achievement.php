@@ -90,9 +90,9 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                   // include 'update.php';
                   ?>
 
-                  <div class="card-body">
+                  <div class="card-body table-responsive">
 
-                    <table id="example1" class=" table-responsive table table-bordered table-striped">
+                    <table id="example1" class="table table-bordered table-striped">
                       <?php $_SESSION['link'] = '<script> document.write(window.location.href)</script>' ?>
                       <thead>
                         <tr>
@@ -195,6 +195,8 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+    <script src="../../ckeditor/ckeditor.js"></script>
+
     <!-- page script -->
     <script>
       $(function() {

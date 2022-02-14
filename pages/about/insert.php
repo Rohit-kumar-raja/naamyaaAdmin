@@ -103,7 +103,7 @@ $cat_r = mysqli_query($connection, $categrie);
                     </div>
                     <div class="md-form mb-5">
                         <label data-error="wrong" data-success="right" for="defaultForm-email">Description</label>
-                        <textarea name="description" id="defaultForm-email" class="form-control validate">
+                        <textarea name="description" id="defaultForm-email" class="form-control validate ckeditor">
 
                         </textarea>
 
@@ -117,3 +117,4 @@ $cat_r = mysqli_query($connection, $categrie);
         </div>
     </div>
 </div>
+<script src="../../ckeditor/ckeditor.js"></script>

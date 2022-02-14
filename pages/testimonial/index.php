@@ -30,6 +30,8 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <!-- Exta css by dev -->
   <link rel="stylesheet" href="../extra.css">
+  <script src="../../ckeditor/ckeditor.js"></script>
+
 </head>
 
 <body class="hold-transition sidebar-mini">

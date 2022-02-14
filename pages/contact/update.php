@@ -9,7 +9,7 @@ include '../../connection.inc.php';
 
 if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
     $id = $_GET['edit'];
-    echo $id;
+
     $select_single_data = "SELECT * FROM `contact_data` WHERE id=$id";
     $result = mysqli_query($connection, $select_single_data);
     if (mysqli_num_rows($result) == 1) {
@@ -48,78 +48,103 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 
         </head>
 
-        <body class="width">
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Update Data</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="../../index.php">Home</a></li>
-                                <li class="breadcrumb-item active">Update Data</li>
-                            </ol>
-                        </div>
+        <body class="hold-transition sidebar-mini">
+            <div class="wrapper">
+                <?php
+                include '../navfootersider/nav.php';
+                include '../navfootersider/aside.php';
+                ?>
+                <div class="content-wrapper">
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class=" col-sm-6">
+                                    <h1>Update Data</h1>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <ol class="breadcrumb float-sm-right">
+                                        <li class="breadcrumb-item"><a href="../../index.php">Home</a></li>
+                                        <li class="breadcrumb-item active">Update Data</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div><!-- /.container-fluid -->
+                    </section>
+                    <div class="card p-3">
+
+
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="row">
+
+
+                                <div class="mb-3  col-sm-4">
+
+
+                                    <label for="exampleInputEmail1" class="form-label">Location Name</label>
+                                    <input type="text" name="location" value="<?php echo $location; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                                </div>
+                                <div class="mb-3  col-sm-4">
+
+
+                                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                                    <input type="text" name="email" value="<?php echo $email; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                                </div>
+                                <div class="mb-3  col-sm-4">
+
+
+                                    <label for="exampleInputEmail1" class="form-label">Phone</label>
+                                    <input type="text" name="phone" value="<?php echo $phone; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                                </div>
+                                <div class="mb-3  col-sm-12">
+
+
+                                    <label for="exampleInputEmail1" class="form-label">Location lingk</label>
+                                    <textarea rows="5" cols="98" type="text" name="location_link" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><?php echo $location_link; ?></textarea>
+
+                                </div>
+
+                                <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>
+                                <h3><?php echo $msg; ?></h3>
+                            </div>
+                        </form>
                     </div>
-                </div><!-- /.container-fluid -->
-            </section>
-            <form method="post" enctype="multipart/form-data">
+                    <!-- Optional JavaScript; choose one of the two! -->
 
-                <div class="mb-3">
-
-
-                    <label for="exampleInputEmail1" class="form-label">Id</label>
-                    <input disabled type="text" value="<?php echo $id; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" pattern="[A-Za-z0-9]+">
-
-                </div>
-                <div class="mb-3">
+                    <!-- Option 1: Bootstrap Bundle with Popper -->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
 
-                    <label for="exampleInputEmail1" class="form-label">Location Name</label>
-                    <input type="text" name="location" value="<?php echo $location; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                </div>
-                <div class="mb-3">
-
-
-                    <label for="exampleInputEmail1" class="form-label">Email</label>
-                    <input type="text" name="email" value="<?php echo $email; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                </div>
-                <div class="mb-3">
-
-
-                    <label for="exampleInputEmail1" class="form-label">Phone</label>
-                    <input type="text" name="phone" value="<?php echo $phone; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                </div>
-                <div class="mb-3">
-
-
-                    <label for="exampleInputEmail1" class="form-label">Location lingk</label>
-                    <textarea rows="5" cols="98" type="text" name="location_link" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <?php echo $location_link; ?>   
-                </textarea>
-
-                </div>
-
-                <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>
-                <h3><?php echo $msg; ?></h3>
-            </form>
-
-            <!-- Optional JavaScript; choose one of the two! -->
-
-            <!-- Option 1: Bootstrap Bundle with Popper -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
-            <!-- Option 2: Separate Popper and Bootstrap JS -->
-            <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    -->
 
         </body>
+        <!-- jQuery -->
+        <script src="../../plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- DataTables -->
+        <script src="../../plugins/datatables/jquery.dataTables.js"></script>
+        <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../../dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="../../dist/js/demo.js"></script>
+        <!-- page script -->
+        <script>
+            $(function() {
+                $("#example1").DataTable();
+                $('#example2').DataTable({
+                    "paging": true,
+                    "lengthChange": false,
+                    "searching": false,
+                    "ordering": true,
+                    "info": true,
+                    "autoWidth": false,
+                });
+            });
+        </script>
 
         </html>
 <?php
@@ -142,7 +167,7 @@ if (isset($_POST['Submit'])) {
     $update = "UPDATE `contact_data` SET `location`='$location',`email`='$email',`phone`='$phone',`location_link`='$location_link' WHERE id=$id";
     $result = mysqli_query($connection, $update);
     if ($result > 0) {
-       echo "<script>
+        echo "<script>
 
        window.location.replace('../contact/contact_data.php')
        </script>";
@@ -151,4 +176,3 @@ if (isset($_POST['Submit'])) {
     }
 }
 ?>
-<a href=></a>

@@ -94,9 +94,9 @@ $cat_r = mysqli_query($connection, $categrie);
 
                                 </select>
                             </div>
-                            <div class="md-form col-sm-6">
+                            <div class="md-form col-sm-12">
                                 <label data-error="wrong" data-success="right" for="defaultForm-email">Description</label>
-                                <textarea name="description" id="defaultForm-email" class="form-control validate" placeholder="Enter Description">
+                                <textarea name="description" id="defaultForm-email" class="form-control ckeditor validate" placeholder="Enter Description">
 
                         </textarea>
 

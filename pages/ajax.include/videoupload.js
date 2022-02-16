@@ -1,31 +1,47 @@
-if ($("#video")[0].files.length) {
-    this.total_files = $("#video")[0].files.length;
-    this.start_process = 0;
-    $.each($("#video")[0].files, function (i, o) {
-        var files = new FormData();
-        files.append(1, o);
-    });
-    $.ajax({
-        url: "http://example.com",
-        method: "POST",
-        contentType: false,
-        processData: false,
-        data: files,
-        async: true,
-        xhr: function () {
-            if (window.XMLHttpRequest) {
-                var xhr = new window.XMLHttpRequest();
-                //Upload progress
-                xhr.upload.addEventListener("progress", function (evt) {
-                    if (evt.lengthComputable) {
-                        var percentComplete = evt.loaded / evt.total;
-                        //Do something with upload progress
+$(document).ready(function () {
+    $("#but_upload").click(function () {
+        var fd = new FormData();
+        var files = $('#file')[0].files;
+
+        // Check file selected or not
+        if (files.length > 0) {
+            fd.append('file', files[0]);
+
+
+            $.ajax({
+
+                xhr: function () {
+                    var xhr = new window.XMLHttpRequest();
+
+                    // Upload progress
+                    xhr.upload.addEventListener("progress", function (evt) {
+                        if (evt.lengthComputable) {
+                            var percentComplete = evt.loaded / evt.total;
+                            //Do something with upload progress
+                            //console.log(percentComplete);
+                            document.getElementById('progress').style.display = 'block';
+                            document.getElementById('progress').style.width = (percentComplete * 100) + '%';
+                            document.getElementById('progress').innerText = (parseInt(percentComplete * 100)) + '%';
+                        }
+                    }, false);
+
+                    return xhr;
+                },
+                url: '../ajax.include/upload.php',
+                type: 'post',
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    document.getElementById('link').value = response;
+                    if (response != 0) {
+                    } else {
+                        alert('file not uploaded');
                     }
-                }, false);
-            }
-        },
-        success: function (data) {
-            alert("file uploaded..");
+                },
+            });
+        } else {
+            alert("Please select a file.");
         }
     });
-}
+});

@@ -5,9 +5,6 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
   $select = "SELECT * FROM `about_us` WHERE `type`='About us'";
   $result1 = mysqli_query($connection, $select);
 
-
-
-
 ?>
   <script>
 
@@ -43,6 +40,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
       <?php
       include '../navfootersider/nav.php';
       include '../navfootersider/aside.php';
+
       ?>
       <!-- end navbar -->
       <!-- Main Sidebar Container -->
@@ -124,10 +122,11 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                               <td><?php echo $rows['date']; ?></td>
                               <td> <a href="https://naamyaafoundation.org/about.php">More</a> </td>
-                              <!-- <td> <a href="read-mail.php?read=<?php //echo $rows['id']; 
+                              <!-- <td> <a href="read-mail.php?read=<?php //echo $rows['id'];
                                                                     ?>">Read..</a></td> -->
                               <td><a href="update.php?edit=<?php echo $rows['id']; ?>&&url=about.php" class="btn btn-warning">Update</a></td>
-                              <!-- <td> <a href="delete.php?delete=<?php // echo $rows['id']; ?>" class="btn btn-danger">Delete</a> -->
+                              <!-- <td> <a href="delete.php?delete=<?php // echo $rows['id'];
+                                                                    ?>" class="btn btn-danger">Delete</a> -->
                               <td> <?php
                                     if ($rows['status'] == 1) {
                                       echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['id'] . "'>Active</a>";
@@ -170,7 +169,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
         <!-- /.content -->
       </div>
       <!-- /.content-wrapper -->
-      <?php include '../navfootersider/footer.php';   ?>
+      <?php include '../navfootersider/footer.php'; ?>
 
       <!-- Control Sidebar -->
       <aside class="control-sidebar control-sidebar-dark">
@@ -191,7 +190,6 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
-    <!-- page script -->
     <script>
       $(function() {
         $("#example1").DataTable();

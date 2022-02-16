@@ -9,8 +9,6 @@ include '../../connection.inc.php';
 
 $url = $_GET['url'];
 
-
-
 if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
     $id = $_GET['edit'];
     // echo $id;
@@ -31,7 +29,6 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
             $desc = $_POST['desc'];
             $status = $_POST['status'];
             $date = date('Y-m-d');
-
 
             $update = "UPDATE `about_us` SET `title`='$title',`description`='$desc',`youtube`='$link',`date`='$date',`status`='$status'  WHERE id=$id";
             $result = mysqli_query($connection, $update);
@@ -57,7 +54,7 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                 setTimeout(function() {
                   window.location.replace('$url');
                   }, 2000);
-        
+
             </script>";
             } else {
                 echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -128,26 +125,38 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 
                     <div class="card p-4">
 
-                        <form method="post" enctype="multipart/form-data">
+                        <form method="post" enctype="multipart/form-data" id="frm_ecard">
                             <div class="container-fluid">
                                 <div class="row">
-                                    <div class="mb-3 col-md-6">
+                                    <div class="mb-3 col-md-4">
                                         <label for="exampleInputEmail1" class="form-label">Title</label>
                                         <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     </div>
-
-
-
-                                    <div class="mb-3 col-md-6">
-                                        <label for="exampleInputEmail1" class="form-label">Youtube Video link</label>
-                                        <input type="text" name="link" value="<?php echo $youtube; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="mb-3 col-md-6">
+                                    <div class="mb-3 col-md-4">
                                         <label for="exampleInputEmail1" class="form-label">Image</label>
                                         <input name="image" type="file" id="defaultForm-email" accept="image/*" class="form-control validate" placeholder="Enter Images">
                                     </div>
 
-                                    <div class="form-group col-md-6">
+                                    <div class="mb-3 col-md-4">
+                                        <label for="exampleInputEmail1" class="form-label">Video </label>
+                                        <input type="file" name="myfile" class="form-control" accept="video/*" id="inputGroupFile02">
+                                    </div>
+
+                                    <!-- this is the progress bar -->
+                                    <div class="progress" style="display: none;">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
+                                    </div>
+                                    <br>
+                                    <div class="alert alert-success status" style="display:none" role="alert">
+                                        Your file is successfully uploaded !
+                                    </div>
+
+
+                                    <div class="mb-3 col-md-4">
+                                        <label for="exampleInputEmail1" class="form-label">Youtube Video link</label>
+                                        <input type="text" name="link" value="<?php echo $youtube; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group col-md-3">
                                         <label for="exampleFormControlSelect1">Select Status</label>
                                         <select name="status" class="form-control" id="exampleFormControlSelect1">
                                             <option value='1'>Active</option>
@@ -158,47 +167,72 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                                         <label for="exampleInputEmail1" class="form-label"> Description</label>
                                         <textarea type="text" cols="10" rows="10" name="desc" class="form-control ckeditor" id="exampleInputEmail1" aria-describedby="emailHelp"><?php echo $description; ?></textarea>
                                     </div>
-
-
-
                                 </div>
                             </div>
                             <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>
                             <h3><?php echo $msg; ?></h3>
                         </form>
                     </div>
-                    <!-- Optional JavaScript; choose one of the two! -->
+                </div>
 
-                    <!-- Option 1: Bootstrap Bundle with Popper -->
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+                <!-- Optional JavaScript; choose one of the two! -->
 
-                    <!-- jQuery -->
-                    <script src="../../plugins/jquery/jquery.min.js"></script>
-                    <!-- Bootstrap 4 -->
-                    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-                    <!-- DataTables -->
-                    <script src="../../plugins/datatables/jquery.dataTables.js"></script>
-                    <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
-                    <!-- AdminLTE App -->
-                    <script src="../../dist/js/adminlte.min.js"></script>
-                    <!-- AdminLTE for demo purposes -->
-                    <script src="../../dist/js/demo.js"></script>
-                    <script src="../../ckeditor/ckeditor.js"></script>
+                <!-- Option 1: Bootstrap Bundle with Popper -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
-                    <!-- page script -->
-                    <script>
+                <!-- jQuery -->
+                <script src="../../plugins/jquery/jquery.min.js"></script>
+                <!-- Bootstrap 4 -->
+                <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <!-- DataTables -->
+                <script src="../../plugins/datatables/jquery.dataTables.js"></script>
+                <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+                <!-- AdminLTE App -->
+                <script src="../../dist/js/adminlte.min.js"></script>
+                <!-- AdminLTE for demo purposes -->
+                <script src="../../dist/js/demo.js"></script>
+                <script src="../../ckeditor/ckeditor.js"></script>
+                <!-- <script src="../ajax.include/videoupload.js"></script> -->
+                <script>
+                    $(document).ready(function() {
                         $(function() {
-                            $("#example1").DataTable();
-                            $('#example2').DataTable({
-                                "paging": true,
-                                "lengthChange": false,
-                                "searching": false,
-                                "ordering": true,
-                                "info": true,
-                                "autoWidth": false,
+
+                            $("form").ajaxForm({
+                                beforeSend: function() {
+                                    $(".status").css("display", "none");
+
+                                    $(".progress").css("display", "");
+                                    var percentVal = "0%";
+                                    $(".bar").css("width", percentVal);
+                                },
+                                uploadProgress: function(event, position, total, percentComplete) {
+                                    var percentVal = percentComplete + "%";
+                                    $(".bar").css("width", percentVal);
+                                },
+                                complete: function(xhr) {
+                                    $(".progress").css("display", "none");
+                                    $(".status").css("display", "");
+
+                                }
                             });
+
                         });
-                    </script>
+                    });
+                </script>
+                <!-- page script -->
+                <script>
+                    $(function() {
+                        $("#example1").DataTable();
+                        $('#example2').DataTable({
+                            "paging": true,
+                            "lengthChange": false,
+                            "searching": false,
+                            "ordering": true,
+                            "info": true,
+                            "autoWidth": false,
+                        });
+                    });
+                </script>
 
         </body>
 
@@ -213,3 +247,7 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 }
 
 ?>
+
+<style>
+
+</style>

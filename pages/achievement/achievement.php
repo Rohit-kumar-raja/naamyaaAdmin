@@ -126,7 +126,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                               <td><?php echo '<img class="mini" src="data:image/jpeg;base64,' . base64_encode($rows['image']) . '"/>'; ?></td>
 
                               <td><?php echo $rows['date']; ?></td>
-                              <td> <a href="https://localhost/naamyaa/about.php">more</a> </td>
+                              <td> <a href="https://naamyaafoundation.org/achievement.php">more</a> </td>
                               <td><a href="update.php?edit=<?php echo $rows['id']; ?>" class="btn btn-warning">Update</a></td>
                               <td> <a href="delete.php?delete=<?php echo $rows['id']; ?>" class="btn btn-danger">Delete</a>
                               <td> <?php
@@ -174,7 +174,6 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
       </div>
       <!-- /.content-wrapper -->
       <?php include '../navfootersider/footer.php';   ?>
-
       <!-- Control Sidebar -->
       <aside class="control-sidebar control-sidebar-dark">
         <!-- Control sidebar content goes here -->
@@ -195,6 +194,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
     <script src="../../ckeditor/ckeditor.js"></script>
+    <script src="../ajax.include/videoupload.js"></script>
 
     <!-- page script -->
     <script>

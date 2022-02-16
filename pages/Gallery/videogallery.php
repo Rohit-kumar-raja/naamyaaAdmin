@@ -113,8 +113,11 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                               <td><?php echo $i++; ?></td>
 
                               <td>
-
-                                <iframe allowfullscreen="" class="embed-responsive-item" src="<?php echo $rowimage['link']; ?>"></iframe>
+                                <?php if (strpos($rowimage['link'], 'naamyaafoundation') == true) { ?>
+                                  <video width="250px"  controls src="<?php echo $rowimage['link']; ?>"></video>
+                                <?php } else { ?>
+                                  <iframe width="250px" class="embed-responsive-item" src="<?php echo $rowimage['link']; ?>"></iframe>
+                                <?php } ?>
                               </td>
                               <td><a href="videoupdate.php?edit=<?php echo $rowimage['id']; ?>" class="btn btn-warning">Update</a></td>
                               <td> <a href="delete.php?del-videos=<?php echo $rowimage['id']; ?>" class="btn btn-danger">Delete</a>
@@ -177,6 +180,8 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+    <script src="../ajax.include/videoupload.js"></script>
+
     <!-- page script -->
     <script>
       $(function() {

@@ -8,7 +8,7 @@ if (isset($_POST['add'])) {
     $title = $_POST['name'];
     $categries = $_POST['Categries'];
     $description = $_POST['description'];
-    $link = str_replace('watch?v=','embed/',$_POST['link']);
+    $link = str_replace('watch?v=', 'embed/', $_POST['link']);
     echo  "<br>";
 
     $status = $_POST['status'];
@@ -86,7 +86,21 @@ $cat_r = mysqli_query($connection, $categrie);
                         <input name="image" type="file" id="defaultForm-email" accept="image/*" class="form-control validate" placeholder="Enter Images">
 
                     </div>
-
+                    <div class="col-sm-5 form-group">
+                        <label for="exampleInputEmail1" class="form-label">Video <i class="fas fa-video    "> <small class="text-danger">(* video <= 64MB)</small> </i> </label>
+                        <div class="progress">
+                            <div id="progress" style="display: none;" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                        </div>
+                        <div class="row" id="video_row">
+                            <div class="col-sm-9">
+                                <input type="file" class="form-control" accept="video/*" id="file" name="file" />
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="button" class="button btn btn-success mt-1" value="Upload" id="but_upload">
+                            </div>
+                            <small class="text-danger pl-2">Please first upload video after that submit the form</small>
+                        </div>
+                    </div>
                     <div class="md-form mb-5">
                         <label data-error="wrong" data-success="right" for="defaultForm-email">Youtube Video link</label>
                         <input name="link" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Youtube Link">

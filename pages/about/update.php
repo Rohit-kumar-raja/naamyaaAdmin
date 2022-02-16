@@ -137,9 +137,20 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                                         <input name="image" type="file" id="defaultForm-email" accept="image/*" class="form-control validate" placeholder="Enter Images">
                                     </div>
 
-                                    <div class="mb-3 col-md-4">
-                                        <label for="exampleInputEmail1" class="form-label">Video </label>
-                                        <input type="file" name="myfile" class="form-control" accept="video/*" id="inputGroupFile02">
+                                    <div class="col-sm-4 form-group">
+                                        <label for="exampleInputEmail1" class="form-label">Video <i class="fas fa-video    "> <small class="text-danger">(* video <= 64MB)</small> </i> </label>
+                                        <div class="progress">
+                                            <div id="progress" style="display: none;" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                        </div>
+                                        <div class="row" id="video_row">
+                                            <div class="col-sm-9">
+                                                <input type="file" class="form-control" accept="video/*" id="file" name="file" />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input type="button" class="button btn btn-success mt-1" value="Upload" id="but_upload">
+                                            </div>
+                                            <small class="text-danger pl-2">Please first upload video after that submit the form</small>
+                                        </div>
                                     </div>
 
                                     <!-- this is the progress bar -->
@@ -150,11 +161,9 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                                     <div class="alert alert-success status" style="display:none" role="alert">
                                         Your file is successfully uploaded !
                                     </div>
-
-
                                     <div class="mb-3 col-md-4">
                                         <label for="exampleInputEmail1" class="form-label">Youtube Video link</label>
-                                        <input type="text" name="link" value="<?php echo $youtube; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <input type="text" id="link" name="link" value="<?php echo $youtube; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="exampleFormControlSelect1">Select Status</label>
@@ -177,22 +186,7 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 
                 <!-- Optional JavaScript; choose one of the two! -->
 
-                <!-- Option 1: Bootstrap Bundle with Popper -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
-                <!-- jQuery -->
-                <script src="../../plugins/jquery/jquery.min.js"></script>
-                <!-- Bootstrap 4 -->
-                <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-                <!-- DataTables -->
-                <script src="../../plugins/datatables/jquery.dataTables.js"></script>
-                <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
-                <!-- AdminLTE App -->
-                <script src="../../dist/js/adminlte.min.js"></script>
-                <!-- AdminLTE for demo purposes -->
-                <script src="../../dist/js/demo.js"></script>
-                <script src="../../ckeditor/ckeditor.js"></script>
-                <!-- <script src="../ajax.include/videoupload.js"></script> -->
+            <?php include '../navfootersider/foot.php'; ?>
                 <script>
                     $(document).ready(function() {
                         $(function() {

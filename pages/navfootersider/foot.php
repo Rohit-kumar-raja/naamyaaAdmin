@@ -9,6 +9,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
     <script src="../../ckeditor/ckeditor.js"></script>
+    <script src="../ajax.include/videoupload.js"></script>
 
     <!-- page script -->
     <script>

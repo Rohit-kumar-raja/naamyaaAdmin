@@ -4,9 +4,9 @@ $cat = " ";
 $status = " ";
 include '../../AdminLogin/function.inc.php';
 
-$desc=' ' ;
+$desc = ' ';
 if (isset($_POST['add'])) {
-    $link = str_replace('watch?v=','embed/',$_POST['link']);
+    $link = str_replace('watch?v=', 'embed/', $_POST['link']);
     $desc = $_POST['description'];
     $status = $_POST['status'];
     if ($cat != null) {
@@ -45,20 +45,35 @@ $result2 = mysqli_query($connection, $select1);
                 <div class="modal-body mx-3">
 
                     <div class="form-group">
-                        <sub class="a-color" for="exampleFormControlSelect1">Video link</sub>
-                        <input name="link" type="text" class="form-control" id="exampleFormControlSelect1"                        
-                        placeholder="ENter Video Link">
+                        <label class="a-color" for="exampleFormControlSelect1">Video link</label>
+                        <input name="link" id="link" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="ENter Video Link">
 
                     </div>
+                    <div class="col-sm-12 form-group">
+                        <label for="exampleInputEmail1" class="form-label">Video <i class="fas fa-video    "> <small class="text-danger">(* video <= 64MB)</small> </i> </label>
+                        <div class="progress">
+                            <div id="progress" style="display: none;" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                        </div>
+
+                        <div class="row" id="video_row">
+                            <div class="col-sm-8">
+                                <input type="file" class="form-control" accept="video/*" id="file" name="file" />
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="button" class="button btn btn-success mt-1" value="Upload" id="but_upload">
+                            </div>
+                            <small class="text-danger pl-2">Please first upload video after that submit the form</small>
+
+                        </div>
+                    </div>
                     <div class="form-group">
-                        <sub class="a-color" for="exampleFormControlSelect1">Description</sub>
-                        <textarea name="description" class="form-control" id="exampleFormControlSelect1"
-                        placeholder="Enter Description">
+                        <label class="a-color" for="exampleFormControlSelect1">Description</label>
+                        <textarea name="description" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Description">
 
                         </textarea>
                     </div>
                     <div class="form-group">
-                        <sub class="a-color" for="exampleFormControlSelect1">Select Status</sub>
+                        <label class="a-color" for="exampleFormControlSelect1">Select Status</label>
                         <select name="status" class="form-control" id="exampleFormControlSelect1">
 
                             <option value='1'>Active</option>

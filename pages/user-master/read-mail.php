@@ -67,7 +67,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-3">
-                <a href="../keypepole/pepole.php" class="btn btn-primary btn-block mb-3"><i class="fas fa-arrow-left"> </i> Back to keypepole</a>
+                <a href="user.php" class="btn btn-primary btn-block mb-3"><i class="fas fa-arrow-left"> </i> Back to keypepole</a>
 
                 <div class="card">
                   <div class="card-header">

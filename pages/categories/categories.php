@@ -84,8 +84,9 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                   // include 'update.php';
                   ?>
              
-                  <div class="card-body">
-                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add New Category
+                  <div class="card-body table-responsive">
+                    
+                  <a href="" class="btn btn-primary text-center mb-2 " data-toggle="modal" data-target="#insert">Add New Category
                   </a>
                     <table id="example1" class="table table-bordered table-striped">
 

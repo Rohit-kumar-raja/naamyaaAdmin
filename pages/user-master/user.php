@@ -89,6 +89,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                           <th>Date/Time</th>
                           <th>Details</th>
+                          <th>Update</th>
                           <th>Status</th>
                           <th>Delete</th>
                         </tr>
@@ -139,6 +140,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                           <th>Date/Time</th>
                           <th>Details</th>
+                          <th>Update</th>
 
                           <th>Status</th>
                           <th>Delete</th>
